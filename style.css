@@ -75,6 +75,7 @@ i{
     margin-top: 150px;
 }
 .box{
+    border-radius: 48px;
     width: 95%;
     max-width: 1300px;
     height: 800px;

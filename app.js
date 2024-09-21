@@ -27,6 +27,5 @@ prev.onclick = function(){
     else{
         list.style.left=0;
     }    
-    
 }
 
