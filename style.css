@@ -136,17 +136,18 @@ i{
 }
 .wave2{
     bottom: 30px;
+    opacity: 0.8;
     animation: animate2 20s linear infinite;
 }
 .wave3{
     bottom: 15px;
+    opacity: 0.6;
     animation: animate3 15s linear infinite;
 }
 @keyframes animate2{
     0%{
         background-position-x: 2600px;
         z-index: 998;
-        opacity: 0.7;
         animation-delay: -5s;
     }
     50%{
@@ -160,7 +161,6 @@ i{
     0%{
         background-position-x: 1300px;
         z-index: 997;
-        opacity: 0.3;
         animation-delay: -2s;
     }
     50%{
