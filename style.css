@@ -39,6 +39,7 @@ i{
     top: 0; left: 0; right: 0;
 }
 .nav-container ul li{
+    margin: 2px;
     float: left;
     position: relative;
 }
@@ -68,6 +69,104 @@ i{
 .nav-item:hover .sub-nav{
     display: block;
 }
+/*-------------------------- search_section ------------------------*/
+.searchbar_container{
+    width: 95%;
+    max-width: 1300px;
+    height: 600px;
+    margin: auto;
+    margin-top: 50px;
+    background-image: url(Plane.jpg);
+    background-size: cover;
+    position: relative;
+    border-radius: 24px;
+}
+.img_text{
+    width: 420px;
+    padding: 100px;
+    color: white;
+    position: relative;
+}
+.img_text h3{
+    margin-top: 10px;
+    width: 300px;
+    text-indent: 10px;
+}
+.img_text button{
+    border: none;
+    color: white;
+    background-color: rgb(0, 162, 255);
+    padding: 10px 20px 10px 20px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.img_text button:hover{
+    background-color: #e85367c4;
+    cursor: pointer;
+}
+.searchbar{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 150px;
+    background-color: #eeeeeefe;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 0 100px 2px rgba(0, 0, 0, 0.1);
+}
+.searchbar_nav{
+    display: flex;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.searchbar_nav button{
+    width: 110px;
+    border: none;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0)
+}
+.searchbar_nav button:hover{
+    background-color: #ececec;
+}
+.searchbar_nav :last-child{
+    width: 420px;
+    color: #eeeefe;
+}
+.searchbar_nav :last-child:hover{
+    background-color: rgba(255, 255, 255, 0)
+}
+.search_form_content{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 90px;
+}
+.search_form_content div form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px; 
+    padding: 30px 20px 30px 20px;
+}
+.search_form_content div form button{
+    border: none;
+    background-color: rgb(0, 162, 255); 
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+}
+.search_form_content div form button:hover{
+    background-color: #e85367c4;
+}
 /*-------------------------- Introduce ------------------------*/
 .introduce_container{
     position: relative;
@@ -75,7 +174,7 @@ i{
     height: 150px;
     display: flex;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .introduce{
     width: 100%;
@@ -194,8 +293,9 @@ i{
     font-size: 1.75rem;
     justify-content: space-between;
     width: 100%;
-    margin-top: 100px;
-    padding: 100px 100px 100px 150px;
+    height: 150px;
+    margin-top: 150px;
+    padding: 10px 100px 80px 100px;
 }
 .recep_title{
     color: rgb(255, 255, 255);
@@ -217,7 +317,7 @@ i{
     display: block;
     position: relative;
     padding-bottom: 20px;
-    height: 450px;
+    height: 500px;
 }
 .slider_list{
     left: 0;
@@ -235,7 +335,7 @@ i{
 }
 .slider_item_link{
     display: block;
-    width:250px;
+    width:260px;
     text-decoration: none;
     color: black;
     background-color: rgb(255, 255, 255);
@@ -270,7 +370,8 @@ i{
     height: 2.34em;
 }
 .card_rating{
-    background-color: #00cc00;
+    color: white;
+    background-color: #e85367;
     width: fit-content;
     padding: 0 4px 0 4px;
     border-radius: 4px;
@@ -285,7 +386,8 @@ i{
 .member_tag{
     width: fit-content;
     line-height: 24px;
-    background-color: #00cc00;
+    background-color: #7DDA58;
+    color: rgb(0, 104, 0);
     display: flex;
     justify-content: center;
     text-align: center;

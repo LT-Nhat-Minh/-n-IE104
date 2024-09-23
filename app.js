@@ -12,7 +12,7 @@ let lengthItems = items.length -1;
 next.onclick = function(){
     if(items[active+2].offsetLeft <= list.offsetWidth - slider.offsetWidth){
         active = active + 2;
-        list.style.left = -items[active].offsetLeft - 72 + 'px';
+        list.style.left = -items[active].offsetLeft - 100 + 'px';
     }
     else{
         list.style.left = - (list.offsetWidth - slider.offsetWidth) + 'px';
@@ -22,7 +22,7 @@ next.onclick = function(){
 prev.onclick = function(){
     if(active - 2 >= 0){
         active -= 2;
-        list.style.left = -items[active].offsetLeft - 72 + 'px';
+        list.style.left = -items[active].offsetLeft - 100 + 'px';
     }
     else{
         list.style.left=0;
