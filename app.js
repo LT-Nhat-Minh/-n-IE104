@@ -37,6 +37,27 @@ function showForm(formClass){
     if (selectedForm) {
         selectedForm.style.display = 'block';
     }
+
+    const nav = document.querySelector('.searchbar_nav');
+    const buttons = nav.querySelectorAll('button'); // Get all buttons
+    buttons.forEach((button, index) => {
+        button.style.borderBottom = '2px solid rgba(0, 0, 0, 0.1)';
+    });
+
+    switch (formClass) {
+        case 'find_hotels':
+            buttons[0].style.borderBottom = '3px solid rgba(0, 0, 0, 0.3)'; // Highlight the first button
+            break;
+        case 'find_flights':
+            buttons[1].style.borderBottom = '3px solid rgba(0, 0, 0, 0.3)'; // Highlight the second button
+            break;
+        case 'find_cars':
+            buttons[2].style.borderBottom = '3px solid rgba(0, 0, 0, 0.3)'; // Highlight the third button
+            break;
+        case 'notes_text':
+            buttons[3].style.borderBottom = '3px solid rgba(0, 0, 0, 0.3)'; // Highlight the fourth button
+            break;
+    }
 }
 function submitForm() {
     // Your form submission logic here
