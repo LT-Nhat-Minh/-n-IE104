@@ -51,22 +51,19 @@
         </div>
         <div class="searchbar">
             <div class="searchbar_nav">
-                <button>Tìm phòng</button>
-                <button>Chuyến bay</button>
-                <button>Đặt xe</button>
-                <button>Lưu ý</button>
+                <button onclick="showForm('find_hotels')">Tìm phòng</button>
+                <button onclick="showForm('find_flights')">Chuyến bay</button>
+                <button onclick="showForm('find_cars')">Đặt xe</button>
+                <button onclick="showForm('notes_text')">Thông tin mã đặt chỗ</button>
                 <button class="empty">o</button>
                 </div>   
                 <div class="search_form_content">
                     <div class="search_form find_hotels">
-                    </div>
-                    <div class="search_form find_flights">
                         <form>
                             <div>
-                                <label>Nơi đến</label>
+                                <label>Địa điểm</label>
                                 <br>
-                                <input type="text" placeholder="Thành phố, khách sạn">
-                                
+                                <input type="text" placeholder="Thành phố, tên khách sạn">
                             </div>
                             <div>
                                 <label>Ngày đặt phòng</label>
@@ -86,8 +83,70 @@
                             <button type="form_submit" onclick="submitForm()"><span class="material-symbols-outlined">search</span> </button>
                         </form>
                     </div>
-                    <div class="search_form find_cars"></div>
-                    <div class="search_form notes_text"></div>
+                    <div class="search_form find_flights">
+                        <form>
+                            <div>
+                                <label>Điểm đi</label>
+                                <br>
+                                <input type="text" placeholder="Nhập điểm đi...">
+                            </div>
+                            <div>
+                                <label>Điểm đến</label>
+                                <br>
+                                <input type="text" placeholder="Nhập điểm đến...">
+                            </div>
+                            <div>
+                                <label>Ngày bay</label>
+                                <br>
+                                <input type="date" placeholder="Ngày">
+                            </div>
+                            <div>
+                                <label>Khách</label>
+                                <br>
+                                <input type="number" placeholder="Số lượng">
+                            </div>
+                            <button type="form_submit" onclick="submitForm()"><span class="material-symbols-outlined">search</span></button>
+                        </form>
+                    </div>
+                    <div class="search_form find_cars">
+                        <form>
+                            <div>
+                                <label>Điểm đón</label>
+                                <br>
+                                <input type="text" placeholder="Nhập điểm đón...">
+                            </div>
+                            <div>
+                                <label>Điểm đến</label>
+                                <br>
+                                <input type="text" placeholder="Nhập điểm đến...">
+                            </div>
+                            <div>
+                                <label>Thời gian</label>
+                                <br>
+                                <input type="datetime-local" placeholder="Ngày">
+                            </div>
+                            <div>
+                                <label>Xe</label>
+                                <div>
+                                    <input type="radio" id="4_seats" name="guest" value="1">
+                                    <label for="4_seats">4 chỗ</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="7_seats" name="guest" value="2">
+                                    <label for="7_seats">7 chỗ</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="12_seats" name="guest" value="3">
+                                    <label for="12_seats">12 chỗ</label>
+                                </div>
+                            </div>
+                            
+                            <button type="form_submit" onclick="submitForm()"><span class="material-symbols-outlined">search</span></button>
+                        </form>
+                    </div>
+                    <div class="search_form notes_text">
+                        <h2></h2>
+                    </div>
                 </div>             
             </div>
         </div>

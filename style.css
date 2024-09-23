@@ -106,7 +106,7 @@ i{
     margin-left: 40px;
 }
 .img_text button:hover{
-    background-color: #e85367c4;
+    background-color: #f8b195;
     cursor: pointer;
 }
 .searchbar{
@@ -119,30 +119,34 @@ i{
     background-color: #eeeeeefe;
     border-radius: 24px;
     overflow: hidden;
+    border: 1px solid rgb(192, 192, 192);
     box-shadow: 0 0 100px 2px rgba(0, 0, 0, 0.1);
 }
 .searchbar_nav{
+    width: 100%;
     display: flex;
     float: left;
     margin-left: 20px;
     margin-right: 20px;
 }
 .searchbar_nav button{
-    width: 110px;
+    width: max-content;
     border: none;
     border-bottom: 3px solid rgba(0, 0, 0, 0.1);
     padding: 20px;
     background-color: rgba(255, 255, 255, 0)
 }
 .searchbar_nav button:hover{
-    background-color: #ececec;
+    background-color: white;
+    cursor: pointer;
 }
 .searchbar_nav :last-child{
-    width: 420px;
+    width: 405px;
     color: #eeeefe;
 }
 .searchbar_nav :last-child:hover{
-    background-color: rgba(255, 255, 255, 0)
+    background-color: rgba(255, 255, 255, 0);
+    cursor: default;
 }
 .search_form_content{
     position: absolute;
@@ -152,20 +156,30 @@ i{
 }
 .search_form_content div form{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 90px; 
+    width: 90%;
     padding: 30px 20px 30px 20px;
 }
 .search_form_content div form button{
     border: none;
     background-color: rgb(0, 162, 255); 
     color: white;
-    padding: 12px;
+    width: 48px;
+    height: 48px;
+    padding: 5px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 95%;
+    transform: translateX(-50%);
 }
 .search_form_content div form button:hover{
-    background-color: #e85367c4;
+    background-color: #f8b195;
+    cursor: pointer;
 }
 /*-------------------------- Introduce ------------------------*/
 .introduce_container{
@@ -386,8 +400,8 @@ i{
 .member_tag{
     width: fit-content;
     line-height: 24px;
-    background-color: #7DDA58;
-    color: rgb(0, 104, 0);
+    background-color: #355c7d;
+    color: #ffffffe3;
     display: flex;
     justify-content: center;
     text-align: center;

@@ -29,3 +29,16 @@ prev.onclick = function(){
     }    
 }
 
+function showForm(formClass){
+    const forms = document.querySelectorAll('.search_form');
+    forms.forEach(forms => forms.style.display = 'none');
+
+    const selectedForm = document.querySelector(`.${formClass}`); // Added a dot to indicate class
+    if (selectedForm) {
+        selectedForm.style.display = 'block';
+    }
+}
+function submitForm() {
+    // Your form submission logic here
+    alert("Form submitted!");
+}
