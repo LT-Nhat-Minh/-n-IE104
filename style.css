@@ -391,6 +391,13 @@ i{
     padding: 0 4px 0 4px;
     border-radius: 4px;
 }
+
+.rate{
+    font-size: 12px;
+    margin: 3px 0;
+    color: #716f6f;
+}
+
 .card_price > span > del{
     font-size: 0.8em;
 }
