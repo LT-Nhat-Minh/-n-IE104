@@ -29,6 +29,26 @@ prev.onclick = function(){
     }    
 }
 
+function showBox(boxClass){
+    const box = document.querySelector(`.${boxClass}`);
+    if(box.style.display == 'block')
+        box.style.display = 'none';
+    else
+        box.style.display = 'block';
+}
+
+document.addEventListener('click', function(event) {
+    const box = document.querySelector('.guestSelector_box');
+    const button = document.querySelector('.guestSelector');
+
+    if(box.style.display === 'block')
+        if(!box.contains(event.target) && !button.contains(event.target)){
+            box.style.display = 'none';
+        }
+        
+});
+
+
 function showForm(formClass){
     const forms = document.querySelectorAll('.form_display');
     forms.forEach(forms => forms.style.display = 'none');
@@ -76,3 +96,4 @@ $(document).ready(function() {
     // Initialize Select2 on the correct element id
     $('#airport-province').select2();
 });
+
