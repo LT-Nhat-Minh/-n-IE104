@@ -30,7 +30,7 @@ prev.onclick = function(){
 }
 
 function showForm(formClass){
-    const forms = document.querySelectorAll('.search_form');
+    const forms = document.querySelectorAll('.form_display');
     forms.forEach(forms => forms.style.display = 'none');
 
     const selectedForm = document.querySelector(`.${formClass}`); // Added a dot to indicate class
@@ -63,3 +63,16 @@ function submitForm() {
     // Your form submission logic here
     alert("Form submitted!");
 }
+
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+});
+
+$(document).ready(function() {
+    // Initialize Select2 on the correct element id
+    $('#airport-province').select2();
+});

@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+
 </head>
 <body>
     <!-- ------------------------------------------- -->
@@ -58,96 +65,144 @@
                 <button class="empty">o</button>
                 </div>   
                 <div class="search_form_content">
-                    <div class="search_form find_hotels">
-                        <form>
-                            <div>
-                                <label>Địa điểm</label>
-                                <br>
-                                <input type="text" placeholder="Thành phố, tên khách sạn">
-                            </div>
-                            <div>
-                                <label>Ngày đặt phòng</label>
-                                <br>
-                                <input type="date" placeholder="Thành phố, khách sạn">
-                            </div>
-                            <div>
-                                <label>Ngày trả phòng</label>
-                                <br>
-                                <input type="date" placeholder="Ngày">
-                            </div>
-                            <div>
-                                <label>Khách</label>
-                                <br>
-                                <input type="number" placeholder="Số lượng">
-                            </div>
-                            <button type="form_submit" onclick="submitForm()"><span class="material-symbols-outlined">search</span> </button>
-                        </form>
-                    </div>
-                    <div class="search_form find_flights">
-                        <form>
-                            <div>
-                                <label>Điểm đi</label>
-                                <br>
-                                <input type="text" placeholder="Nhập điểm đi...">
-                            </div>
-                            <div>
-                                <label>Điểm đến</label>
-                                <br>
-                                <input type="text" placeholder="Nhập điểm đến...">
-                            </div>
-                            <div>
-                                <label>Ngày bay</label>
-                                <br>
-                                <input type="date" placeholder="Ngày">
-                            </div>
-                            <div>
-                                <label>Khách</label>
-                                <br>
-                                <input type="number" placeholder="Số lượng">
-                            </div>
-                            <button type="form_submit" onclick="submitForm()"><span class="material-symbols-outlined">search</span></button>
-                        </form>
-                    </div>
-                    <div class="search_form find_cars">
-                        <form>
-                            <div>
-                                <label>Điểm đón</label>
-                                <br>
-                                <input type="text" placeholder="Nhập điểm đón...">
-                            </div>
-                            <div>
-                                <label>Điểm đến</label>
-                                <br>
-                                <input type="text" placeholder="Nhập điểm đến...">
-                            </div>
-                            <div>
-                                <label>Thời gian</label>
-                                <br>
-                                <input type="datetime-local" placeholder="Ngày">
-                            </div>
-                            <div>
-                                <label>Xe</label>
+                    <div class="form_container">
+                        <div class="form_display find_hotels">
+                            <form>
                                 <div>
-                                    <input type="radio" id="4_seats" name="guest" value="1">
-                                    <label for="4_seats">4 chỗ</label>
+                                    <label for="airport-province">Chọn sân bay</label>
+                                    <select id="airport-province">  
+                                        <option value="">Chọn sân bay</option>
+                                        <!-- Các tỉnh/thành phố có sân bay -->
+                                        <option value="TSN">TP. Hồ Chí Minh, Sân bay Tân Sơn Nhất</option>
+                                        <option value="NBI">Hà Nội, Sân bay Nội Bài</option>
+                                        <option value="DAD">Đà Nẵng, Sân bay Đà Nẵng</option>
+                                        <option value="CXR">Khánh Hòa, Sân bay Cam Ranh</option>
+                                        <option value="VDO">Quảng Ninh, Sân bay Vân Đồn</option>
+                                        <option value="DLI">Lâm Đồng, Sân bay Liên Khương</option>
+                                        <option value="VTA">Bà Rịa - Vũng Tàu, Sân bay Vũng Tàu</option>
+                                        <option value="PQC">Kiên Giang, Sân bay Phú Quốc</option>
+                                        <option value="VKG">Kiên Giang, Sân bay Rạch Giá</option>
+                                        <option value="VCA">Cần Thơ, Sân bay Cần Thơ</option>
+                                        <option value="VDH">Quảng Bình, Sân bay Đồng Hới</option>
+                                        <option value="HPH">Hải Phòng, Sân bay Cát Bi</option>
+                                        <option value="THD">Thanh Hóa, Sân bay Thọ Xuân</option>
+                                        <option value="TBB">Phú Yên, Sân bay Tuy Hòa</option>
+                                        <option value="PXU">Gia Lai, Sân bay Pleiku</option>
+                                        <option value="UIH">Bình Định, Sân bay Phù Cát</option>
+                                        <option value="BMV">Đắk Lắk, Sân bay Buôn Ma Thuột</option>
+                                        <option value="VII">Nghệ An, Sân bay Vinh</option>
+                                        <option value="CAH">Cà Mau, Sân bay Cà Mau</option>
+                                        <option value="DIN">Điện Biên, Sân bay Điện Biên Phủ</option>
+                                        <option value="CXR">Ninh Thuận, Sân bay Thành Sơn</option>
+                                        <option value="DLI">Thừa Thiên Huế, Sân bay Phú Bài</option>
+                                   </select>
                                 </div>
                                 <div>
-                                    <input type="radio" id="7_seats" name="guest" value="2">
-                                    <label for="7_seats">7 chỗ</label>
+                                    <label>Ngày đặt phòng</label>
+                                    <br>
+                                    <input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
                                 </div>
                                 <div>
-                                    <input type="radio" id="12_seats" name="guest" value="3">
-                                    <label for="12_seats">12 chỗ</label>
+                                    <button class="guestSelector">
+                                        <p>
+                                            <span class="material-symbols-outlined">group_add</span>
+                                            1 Người lớn, 0 trẻ em, 1 phòng
+                                            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                                        </p>
+                                    </button>
+                                    <div class="guestSelector_box">
+                                        <div>
+                                            <label for="adults">Người lớn</label>
+                                            <button class="GSC"></button>
+                                            <input type="number" min="1" max="7" size="2em">
+                                            <button class="GSC"></button>
+                                        </div>
+                                        <div>
+                                            <label for="children">Trẻ em</label>
+                                            <button class="GSC"></button>
+                                            <input type="number" min="1" max="7" size="2em">
+                                            <button class="GSC"></button>
+                                        </div>
+                                        <div>
+                                            <label for="rooms">Số phòng</label>
+                                            <div>
+                                                <button class="GSC">-</button>
+                                                <input type="number" min="1" max="7" size="2em">
+                                                <button class="GSC">+</button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="pets?">Đi cùng thú cưng?</label>
+                                            <input type="checkbox">
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <button type="form_submit" onclick="submitForm()"><span class="material-symbols-outlined">search</span></button>
-                        </form>
+                            </form>
+                        </div>
+                        <div class="form_display find_flights">
+                            <form>
+                                <div>
+                                    <label>Điểm đi</label>
+                                    <br>
+                                    <input type="text" placeholder="Nhập điểm đi...">
+                                </div>
+                                <div>
+                                    <label>Điểm đến</label>
+                                    <br>
+                                    <input type="text" placeholder="Nhập điểm đến...">
+                                </div>
+                                <div>
+                                    <label>Ngày bay</label>
+                                    <br>
+                                    <input type="date" placeholder="Ngày">
+                                </div>
+                                <div>
+                                    <label>Khách</label>
+                                    <br>
+                                    <input type="number" placeholder="Số lượng">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="form_display find_cars">
+                            <form>
+                                <div>
+                                    <label>Điểm đón</label>
+                                    <br>
+                                    <input type="text" placeholder="Nhập điểm đón...">
+                                </div>
+                                <div>
+                                    <label>Điểm đến</label>
+                                    <br>
+                                    <input type="text" placeholder="Nhập điểm đến...">
+                                </div>
+                                <div>
+                                    <label>Thời gian</label>
+                                    <br>
+                                    <input type="datetime-local" placeholder="Ngày">
+                                </div>
+                                <div>
+                                    <label>Xe</label>
+                                    <div>
+                                        <input type="radio" id="4_seats" name="guest" value="1">
+                                        <label for="4_seats">4 chỗ</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="7_seats" name="guest" value="2">
+                                        <label for="7_seats">7 chỗ</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="12_seats" name="guest" value="3">
+                                        <label for="12_seats">12 chỗ</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="form_display notes_text">
+                            <h2></h2>
+                        </div>
                     </div>
-                    <div class="search_form notes_text">
-                        <h2></h2>
-                    </div>
-                </div>             
+                    <button type="form_submit" onclick="submitForm()"><span class="material-symbols-outlined">search</span></button>
+                </div>           
             </div>
         </div>
     </div>
@@ -465,5 +520,11 @@
         </footer>
     </div>
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+ $(function(){
+  $("#airport_province").select2();
+ }); 
+</script>
 </body>
 </html>
