@@ -97,3 +97,28 @@ $(document).ready(function() {
     $('#airport-province').select2();
 });
 
+function increaseValue(id){
+    let input = document.getElementById(id);
+    let currentValue = parseInt(input.value);
+    if (currentValue < input.max) {
+        input.value = currentValue + 1;
+        textUpdate();
+    }
+}
+
+function decreaseValue(id){
+    let input = document.getElementById(id);
+    let currentValue = parseInt(input.value);
+    if (currentValue > input.min){
+        input.value = currentValue - 1;
+        textUpdate();
+    }
+}
+
+function textUpdate(){
+    let adults = document.getElementById('adults');
+    let childrens = document.getElementById('childrens');
+    let rooms = document.getElementById('rooms');
+    let text = document.getElementById('guestSelector_box--text');
+    text.innerHTML = adults.value + " Người lớn, " + childrens.value + " Trẻ em, " + rooms.value + " phòng";
+}

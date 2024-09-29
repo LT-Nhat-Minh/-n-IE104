@@ -13,9 +13,8 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-
+    <link href="dist/css/select2.css" rel="stylesheet" />
+    <script src="dist/js/select2.js"></script>
     
 </head>
 <body>
@@ -70,7 +69,7 @@
                 <div class="search_form_content">
                     <div class="form_container">
                         <div class="form_display find_hotels">
-                            <form>
+                            <form autocomplete="off">
                                 <div>
                                     <select id="airport-province">  
                                         <option value="">Bạn muốn đến đâu?</option>
@@ -100,43 +99,43 @@
                                    </select>
                                 </div>
                                 <div>
-                                    <input type="text" id="daterange" class="form-control" placeholder="Ngày nhận phòng - Ngày trả phòng">
+                                    <input type="text" id="daterange" class="form-control noselect" placeholder="Ngày nhận phòng - Ngày trả phòng">
                                 </div>
                                 <div>
                                     <button type="button" class="guestSelector" onclick="showBox('guestSelector_box')">
                                             <span class="material-symbols-outlined">group_add</span>
-                                            1 Người lớn, 0 trẻ em, 1 phòng
+                                            <span id="guestSelector_box--text">1 Người lớn, 0 trẻ em, 1 phòng</span>
                                             <span class="material-symbols-outlined">keyboard_arrow_down</span>
                                     </button>
                                     <div class="guestSelector_box">
                                         <div>
                                             <label for="adults">Người lớn</label>
                                             <div>
-                                                <button class="GSC" type="button">-</button>
-                                                <input type="number" min="1" max="7" size="2em">
-                                                <button class="GSC" type="button">+</button>
+                                                <button class="GSC" type="button" onclick="decreaseValue('adults')">-</button>
+                                                <input id="adults" type="number" min="1" max="7" size="2em" value="1">
+                                                <button class="GSC" type="button" onclick="increaseValue('adults')">+</button>
                                             </div>
                                         </div>
                                         <div>
-                                            <label for="children">Trẻ em</label>
+                                            <label for="childrens">Trẻ em</label>
                                             <div>
-                                                <button class="GSC" type="button">-</button>
-                                                <input type="number" min="1" max="7" size="2em">
-                                                <button class="GSC" type="button">+</button>
+                                                <button class="GSC" type="button" onclick="decreaseValue('childrens')">-</button>
+                                                <input id="childrens" type="number" min="1" max="7" size="2em" value="0">
+                                                <button class="GSC" type="button" onclick="increaseValue('childrens')">+</button>
                                             </div>
                                         </div>
                                         <div>
                                             <label for="rooms">Số phòng</label>
                                             <div>
-                                                <button class="GSC" type="button">-</button>
-                                                <input type="number" min="1" max="7" size="2em">
-                                                <button class="GSC" type="button">+</button>
+                                                <button class="GSC" type="button" onclick="decreaseValue('rooms')">-</button>
+                                                <input id="rooms" type="number" min="1" max="3" size="2em" value="1">
+                                                <button class="GSC" type="button" onclick="increaseValue('rooms')">+</button>
                                             </div>
                                         </div>
                                         <div>
                                             <div>
                                                 <label for="pets?">Đi cùng thú cưng?</label>
-                                                <input type="checkbox">
+                                                <input id="pets?" type="checkbox">
                                             </div>
                                         </div>
                                     </div>
@@ -578,6 +577,8 @@
     // Optionally set an initial placeholder
     $('#daterange').val(""); // Optional: Clear the value if you want to ensure the placeholder shows
  });
+
+
 </script>
 </body>
 </html>
