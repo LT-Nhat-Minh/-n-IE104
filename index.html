@@ -98,7 +98,8 @@
                                         <option value="DLI">Thừa Thiên Huế, Sân bay Phú Bài</option>
                                    </select>
                                 </div>
-                                <div>
+                                <div class="datePicker_container">
+                                    <span class="material-symbols-outlined">date_range</span>
                                     <input type="text" id="daterange" class="form-control noselect" placeholder="Ngày nhận phòng - Ngày trả phòng">
                                 </div>
                                 <div>
@@ -120,7 +121,7 @@
                                             <label for="childrens">Trẻ em</label>
                                             <div>
                                                 <button class="GSC" type="button" onclick="decreaseValue('childrens')">-</button>
-                                                <input id="childrens" type="number" min="1" max="7" size="2em" value="0">
+                                                <input id="childrens" type="number" min="0" max="7" size="2em" value="0">
                                                 <button class="GSC" type="button" onclick="increaseValue('childrens')">+</button>
                                             </div>
                                         </div>
@@ -134,8 +135,11 @@
                                         </div>
                                         <div>
                                             <div>
-                                                <label for="pets?">Đi cùng thú cưng?</label>
-                                                <input id="pets?" type="checkbox">
+                                                <label class="checkbox_container">Đi cùng thú cưng
+                                                    <input id="pets" type="checkbox" class="custom_checkbox">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -237,8 +241,25 @@
             <div class="slider">
                 <ul class="slider_list">
                     <li class="slider_list_item">
+                        <div class="image_slider">
+                            <div class="image_slider_list">
+                                <div class="image_slider_list_item">
+                                    <img src="0a7d5696.avif" alt="hotel_image" class="slider_image">
+                                </div>
+                                <div class="image_slider_list_item">
+                                    <img src="hotels_image/1/21d0bcfd.avif" alt="hotel_image" class="slider_image">
+                                </div>
+                                <div class="image_slider_list_item">
+                                    <img src="hotels_image/1/42e337cf.avif" alt="hotel_image" class="slider_image">
+                                </div>
+                                <div class="image_slider_list_item">
+                                    <img src="hotels_image/1/5bcfe6e4.avif" alt="hotel_image" class="slider_image">
+                                </div>
+                            </div>
+                            <button class="material-symbols-outlined ib_prev"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e8eaed"><path d="M561-240 320-481l241-241 43 43-198 198 198 198-43 43Z"/></svg></button>
+                            <button class="material-symbols-outlined ib_next"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e8eaed"><path d="M530-481 332-679l43-43 241 241-241 241-43-43 198-198Z"/></svg></button>
+                        </div>
                         <a href="#" class="slider_item_link">
-                            <img src="0a7d5696.avif" alt="hotel_image" class="slider_image">
                             <div class="card_title">
                                 <h5>1, TP. Hồ Chí Minh</h5>
                                 <h3>Paradise Saigon Boutique Hotel & Spa</h3>
@@ -263,8 +284,25 @@
                         </a>
                     </li>
                     <li class="slider_list_item">
+                        <div class="image_slider">
+                            <div class="image_slider_list">
+                                <div class="image_slider_list_item">
+                                    <img src="hotels_image/1/1f3ace88.avif" alt="hotel_image" class="slider_image">
+                                </div>
+                                <div class="image_slider_list_item">
+                                    <img src="hotels_image/1/21d0bcfd.avif" alt="hotel_image" class="slider_image">
+                                </div>
+                                <div class="image_slider_list_item">
+                                    <img src="hotels_image/1/42e337cf.avif" alt="hotel_image" class="slider_image">
+                                </div>
+                                <div class="image_slider_list_item">
+                                    <img src="hotels_image/1/5bcfe6e4.avif" alt="hotel_image" class="slider_image">
+                                </div>
+                            </div>
+                            <button class="material-symbols-outlined ib_prev"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e8eaed"><path d="M561-240 320-481l241-241 43 43-198 198 198 198-43 43Z"/></svg></button>
+                            <button class="material-symbols-outlined ib_next"><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e8eaed"><path d="M530-481 332-679l43-43 241 241-241 241-43-43 198-198Z"/></svg></button>
+                        </div>
                         <a href="#" class="slider_item_link">
-                            <img src="0a7d5696.avif" alt="hotel_image" class="slider_image">
                             <div class="card_title">
                                 <h5>Hoàn Kiếm, Hà Nội</h5>
                                 <h3>Hanoi Pearl Hotel</h3>
@@ -571,7 +609,7 @@
         // Don't set a default value, so the placeholder shows
     }, function(start, end, label) {
         // Update the input text with the selected dates
-        $('#daterange').val(start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
+        $('#daterange').val('<span class="material-symbols-outlined">date_range</span>' + start.format('DD/MM/YYYY') + ' - ' + end.format('DD/MM/YYYY'));
     });
 
     // Optionally set an initial placeholder
