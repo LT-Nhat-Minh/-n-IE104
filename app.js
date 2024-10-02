@@ -31,39 +31,36 @@ prev.onclick = function(){
 }
 
 /* slider_image */
-let islider = document.querySelector('.image_slider');
-    let ilist = document.querySelector('.image_slider_list');
-    let iitems = document.querySelectorAll('.image_slider_list_item');
-    let inext = document.getElementsByClassName('ib_next')[0];
-    let iprev = document.getElementsByClassName('ib_prev')[0];
+    $(".ib_next").click(function(){
     
-    let iactive = 0;
+    let $this = $(this);
+    let $islider = $this.closest('.image_slider');
+    let $ilist = $islider.find('.image_slider_list');
+    let $iitems = $islider.find('.image_slider_list_item');
+    let activeIndex = $islider.data('activeIndex') || 0;
 
-    inext.onclick = function(){
-    if(iitems[iactive+1].offsetLeft <= ilist.offsetWidth - islider.offsetWidth){
-        iactive = iactive + 1;
-        ilist.style.left = -iitems[iactive].offsetLeft + 'px';
+    if(activeIndex < $iitems.length - 1){
+        activeIndex = activeIndex + 1;
+        let newLeft = -$iitems[activeIndex].offsetLeft + 'px'
+        $ilist.css('left', newLeft);
     }
-    else{
-        iactive = iitems.length;
-        ilist.style.left = - (ilist.offsetWidth - islider.offsetWidth) + 'px';
-    }
-    console.log('Current active image offsetLeft:', iitems[iactive].offsetLeft);
-    console.log('Current active image offsetWidth:', iitems[iactive - 1].offsetWidth);
-    console.log('Current active image offsetLeft:', iitems[iactive - 1].offsetLeft);
-    console.log('Current active image offsetLeft:', iitems.length);
-}
+    $islider.data('activeIndex', activeIndex);
+});
 
-iprev.onclick = function(){
-    if(iactive - 1 >= 0){
-        iactive = iactive - 1;
-        ilist.style.left = -iitems[iactive].offsetLeft  + 'px';
+$('.ib_prev').click(function(){
+    let $this = $(this);
+    let $islider = $this.closest('.image_slider');
+    let $ilist = $islider.find('.image_slider_list');
+    let $iitems = $islider.find('.image_slider_list_item');
+    let activeIndex = $islider.data('activeIndex') || 0;
+
+    if(activeIndex > 0){
+        activeIndex = activeIndex - 1;
+        let newLeft = -$iitems[activeIndex].offsetLeft + 'px';
+        $ilist.css('left', newLeft);
     }
-    else{
-        iactive = 0;
-        ilist.style.left =  0 + 'px';
-    }    
-}
+    $islider.data('activeIndex', activeIndex);
+});
 
 /*------------*/
 

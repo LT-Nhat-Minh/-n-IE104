@@ -653,9 +653,10 @@ input[type=text]:focus {
     position: absolute;
     transform: translateY(-50%);
     border: none;
-    width: 5%;
-    height: 100%;
-    color: #fff;
+    width: 48px;
+    height: 48px;
+    background-color: #aaa;
+    border-radius: 50%;
 }
 .slider .b_prev, .slider .b_next{
     opacity: 0;
@@ -666,6 +667,9 @@ input[type=text]:focus {
 }
 .slider button:hover{
     cursor: pointer;
+}
+.svg{
+    fill: rgb(0, 162, 255);   
 }
 .b_prev{
     left: 15px;
@@ -681,7 +685,6 @@ input[type=text]:focus {
 }
 .b_next:hover {
     right: 5px;
-    padding-left: 15px;
 }
 /*--------image_slider--------*/
 .image_slider{
